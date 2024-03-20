@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>최근 본 상품 - 사랑스러운 중고거래 웹사이트</title>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>최근 본 상품 - 사랑스러운 중고거래 웹사이트</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="header">
-  <div class="logo">사랑스러운 중고</div>
-  <nav class="menu">
-    <a href="00_home.html">홈</a>
-    <a href="01_popular_items.html">인기 아이템</a>
-    <a href="02_recently_viewed.html" class="active">최근 본 상품</a>
-    <a href="03_community.html">커뮤니티</a>
-    <a href="04_mypages.html">마이페이지</a>
-  </nav>
-  <div class="search-container">
-    <input type="search" class="search" placeholder="찾고 싶은 상품을 검색하세요">
-    <button class="search-btn"><i class="fas fa-search"></i></button>
+  <div class="header">
+    <div class="logo">사랑스러운 중고</div>
+    <nav class="menu">
+      <a href="00_home.html">홈</a>
+      <a href="01_popular_items.html">인기 아이템</a>
+      <a href="02_recently_viewed.html" class="active">최근 본 상품</a>
+      <a href="03_community.html">커뮤니티</a>
+      <a href="04_mypages.html">마이페이지</a>
+    </nav>
+    <div class="search-container">
+      <input type="search" class="search" placeholder="찾고 싶은 상품을 검색하세요">
+      <button class="search-btn"><i class="fas fa-search"></i></button>
+    </div>
   </div>
-</div>
 
-<div class="main-title">
-  <h1>최근 본 상품</h1>
-</div>
+  <div class="main-title">
+    <h1>최근 본 상품</h1>
+  </div>
 
-<div class="recent-products-content">
-  <table class="products-table">
-    <thead>
-      <tr>
-        <th>상품 이미지</th>
-        <th>상품 이름</th>
-        <th>가격</th>
-        <th>설명</th>
-        <th>상품 페이지</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Each row is clickable and will take the user to the product detail page -->
-      <!-- <tr onclick="location.href='product-detail-page.html'"> -->
+  <div class="recent-products-content">
+    <table class="products-table">
+      <thead>
+        <tr>
+          <th>상품 이미지</th>
+          <th>상품 이름</th>
+          <th>가격</th>
+          <th>설명</th>
+          <th>상품 페이지</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Each row is clickable and will take the user to the product detail page -->
+        <!-- <tr onclick="location.href='product-detail-page.html'"> -->
         <tr onclick="location.href='#'">
           <td data-label="상품 이미지"><img src="https://picsum.photos/seed/picsum/300/300" alt="Product 1"></td>
           <td data-label="상품 이름">화이트 티셔츠</td>
@@ -84,20 +86,21 @@
           <td data-label="설명">부드러운 코튼 소재로 제작된 캐주얼한 스타일의 팬츠입니다.</td>
           <td data-label="상품 페이지"><a href="#">상세 보기</a></td>
         </tr>
-        
-      <!-- Repeat for each product -->
-    </tbody>
-  </table>
-</div>
 
-
-
-
-<footer>
-  <div class="footer-content">
-    <p>&copy; 2024 사랑스러운 중고. 모든 권리 보유.</p>
+        <!-- Repeat for each product -->
+      </tbody>
+    </table>
   </div>
-</footer>
+
+
+
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 사랑스러운 중고. 모든 권리 보유.</p>
+    </div>
+  </footer>
 
 </body>
+
 </html>
