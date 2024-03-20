@@ -1,7 +1,35 @@
-/* style.css 파일 내용 */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Baloo 2', cursive; color: #4a4e69; background-color: #f2e9e4; line-height: 1.28; }
-.header { display: flex; justify-content: space-between; align-items: center; padding: 16px; background-color: #9a8c98; color: #f2e9e4; border-bottom: 4px solid #c9ada7; }
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Baloo 2', cursive;
+  color: #4a4e69;
+  background-color: #f2e9e4;
+  line-height: 1.28;
+  min-height: 100vh; /* Ensure the minimum height is full viewport height */
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #9a8c98;
+  color: #f2e9e4;
+  border-bottom: 4px solid #c9ada7;
+}
+
 .logo { font-size: 25.6px; font-weight: 700; }
 .menu { display: flex; gap: 16px; }
 .menu a { color: #f2e9e4; text-decoration: none; padding: 4px 8px; border-radius: 6.4px; background-color: #c9ada7; font-weight: 600; }
@@ -407,58 +435,16 @@ body { font-family: 'Baloo 2', cursive; color: #4a4e69; background-color: #f2e9e
   text-decoration: underline;
 }
 
+
+
+
+
+
+/* Footer Styles */
 footer {
   background-color: #9a8c98;
   color: #f2e9e4;
   text-align: center;
   padding: 20px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  margin-top: auto; /* Push the footer to the bottom of the viewport/page */
 }
-
-.footer-content p {
-  margin: 0;
-}
-
-
-
-
-
-
-
-
-
-
-/* Footer style to ensure it's always at the bottom */
-footer {
-  background-color: #9a8c98;
-  color: #f2e9e4;
-  text-align: center;
-  padding: 20px 0;
-  width: 100%;
-  /* New styles to ensure footer positioning */
-  position: relative; /* Changed to relative */
-  bottom: 0;
-  margin-top: 40px; /* Add space before footer */
-}
-
-.footer-content p {
-  margin: 0;
-}
-
-footer {
-  background-color: #9a8c98;
-  color: #f2e9e4;
-  text-align: center;
-  padding: 20px 0;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.footer-content p {
-  margin: 0;
-  padding: 10px;
-}
-
