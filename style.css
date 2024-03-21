@@ -46,11 +46,7 @@ body {
   border-bottom: 4px solid #c9ada7;
 }
 
-/* .logo {
-  font-size: 56.6px;
-  font-weight: 700;
-}
- */
+
 
 
 
@@ -186,11 +182,11 @@ body {
 
 .main-title {
   text-align: center;
-  padding: 72px;
+  padding: 30px;
   background-color: #9a8c98;
   color: #f2e9e4;
   margin-bottom: 32px;
-  font-size: 25.6px;
+  font-size: 19.6px;
   font-weight: 700;
   animation: colorChange 2s;
   animation-fill-mode: forwards;
@@ -516,64 +512,82 @@ body {
 
 
 
+
 /* Community Posts and Sidebar */
 .community-content {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 30px;
+  margin: 20px 0;
+  align-items: flex-start;
 }
 
 /* Individual Post Styling */
 .post {
-  border: 1px solid #c9ada7;
-  border-radius: 8px;
-  padding: 15px;
-  background-color: white;
+  border: 2px solid #e2d4f0;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #ffffff;
   margin-bottom: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.post:hover {
+  transform: translateY(-10px);
 }
 
 .post h2 {
-  color: #4a4e69;
-  margin-bottom: 8px;
+  color: #5b4b8a;
+  margin-bottom: 12px;
+}
+
+.post p {
+  font-size: 16px;
+  color: #626262;
+  line-height: 1.5;
 }
 
 .post-meta {
-  color: #666;
+  display: flex;
+  justify-content: space-between;
   font-size: 14px;
-  border-top: 1px solid #eee;
+  color: #9a8c98;
+  border-top: 1px dashed #c9ada7;
   padding-top: 8px;
-  margin-top: 8px;
+  margin-top: 12px;
 }
 
 /* Sidebar with Filters */
 .sidebar {
-  flex: 0 0 300px;
   background-color: #f2e9e4;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
 }
 
 /* Popular Posts Filters */
 .filters {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
 .filter-btn {
-  background-color: #f2e9e4;
-  border: none;
+  background-color: #eae7dc;
+  border: 2px solid #d3c0cd;
   padding: 8px 12px;
-  margin: 0 5px;
+  margin: 0 10px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.2s;
+  font-weight: 600;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 .filter-btn:hover,
 .filter-btn.active {
   background-color: #c9ada7;
-  color: #f2e9e4;
+  color: #ffffff;
 }
 
 /* Popular Posts List with Ranks */
@@ -584,8 +598,8 @@ body {
 }
 
 .popular-posts li .rank {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   background-color: #c9ada7;
   color: #fff;
   display: flex;
@@ -598,35 +612,234 @@ body {
 
 .popular-posts li a {
   text-decoration: none;
-  color: #4a4e69;
-  font-weight: bold;
-  transition: color 0.2s;
+  color: #5b4b8a;
+  font-weight: 600;
+  transition: color 0.2s ease-in-out;
 }
 
 .popular-posts li a:hover {
-  color: #6b5b95;
+  color: #355070;
 }
 
-.post-meta {
+/* Adjustments for Community Calendar */
+.community-calendar {
+  background-color: #f7ede2;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.community-calendar h2, .popular-filter h2 {
+  color: #5b4b8a;
+  margin-bottom: 15px;
+}
+
+.events-list li {
+  margin-bottom: 10px;
+}
+
+.events-list li strong {
+  color: #355070;
+}
+
+.events-list li span {
+  font-size: 14px;
+  color: #626262;
+}
+
+/* 설문 조사 디자인 개선 */
+.community-poll {
+  border: 2px solid #FFB6C1;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 30px;
+  background-color: #FFF0F5;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.community-poll h2, #pollResults h3 {
+  color: #5b4b8a;
+  cursor: pointer;
+}
+
+.community-poll p, .community-poll label {
+  color: #626262;
+}
+
+.community-poll form {
+  display: grid;
+  gap: 10px;
+}
+
+.community-poll button {
+  background-color: #FFB6C1;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.community-poll button:hover {
+  background-color: #FF69B4;
+}
+
+.bar {
+  background-color: #FFB6C1;
+  text-align: right;
+  padding: 10px;
+  color: white;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  transition: width 0.6s ease;
+}
+
+/* 설문 조사 접기/펼치기 버튼 */
+.toggle-button {
+  background-color: transparent;
+  border: none;
+  color: #5b4b8a;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 1em;
+}
+
+.hide {
+  display: none;
+}
+
+/* 세로 그래프 스타일 */
+.results-container {
   display: flex;
-  justify-content: start;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 20px;
+}
+
+.result-bar {
+  width: 20%;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  font-size: 0.9rem;
-  color: #666;
 }
 
-.post-meta .author,
-.post-meta .date {
-  margin-right: 15px;
-  /* Adds space to the right of each meta item */
+.result-bar div {
+  width: 100%;
+  background-color: #FFB6C1;
+  transition: all 0.5s ease;
+  border-radius: 5px 5px 0;
+  text-align: center;
+  color: white;
+  font-weight: bold;
 }
 
-.post-meta .author:after {
-  content: '|';
-  /* Adds a vertical separator after the author */
-  margin-left: 15px;
-  color: #ccc;
+.result-text {
+  margin-top: 10px;
+  color: #626262;
 }
+
+/* 설문 조사 결과 텍스트 */
+.poll-completed-message {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #5b4b8a;
+  font-weight: bold;
+}
+
+
+/* <div class="upcoming-events-calendar">
+<h3>주간 공연 예정</h3>
+<!-- 한 주간의 날짜와 예정된 공연 정보 표시 -->
+<div class="week">
+  <div class="day">
+    <div class="date">4월 1일</div>
+    <div class="events">
+      <div class="event">뮤지컬 '위키드'</div>
+      <div class="event">연극 '로미오와 줄리엣'</div>
+    </div>
+  </div>
+  <!-- 나머지 날짜에 대한 day div 추가 -->
+  <!-- 예: -->
+  <div class="day">
+    <div class="date">4월 2일</div>
+    <div class="events">
+      <div class="event">발레 '백조의 호수'</div>
+    </div>
+  </div>
+  <!-- 나머지 날짜 구조 반복 -->
+</div>
+</div> */
+
+/* 주간 캘린더 스타일 */
+.sidebar .weekly-events-calendar {
+  background: #FFFF;
+  border: 1px solid #FFB6C1;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.sidebar .weekly-events-calendar h3 {
+  color: #5b4b8a;
+  margin-bottom: 15px;
+}
+
+.sidebar .week-indicator {
+  text-align: center;
+  font-weight: bold;
+  color: #5b4b8a;
+  margin-bottom: 10px;
+}
+
+.sidebar .calendar-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.sidebar .day-of-week {
+  font-weight: bold;
+  color: #5b4b8a;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.sidebar .date-with-events {
+  background-color: #eae7dc;
+  border-radius: 5px;
+  padding: 5px;
+  position: relative;
+}
+
+.sidebar .date {
+  background-color: #FFC0CB;
+  color: #5b4b8a;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.sidebar .events-list {
+  margin-top: 5px;
+}
+
+.sidebar .event {
+  background-color: #f8f9fa;
+  color: #5b4b8a;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  cursor: default;
+  font-size: 0.8em;
+}
+
+
+
+
 
 
 
