@@ -46,13 +46,6 @@ body {
   border-bottom: 4px solid #c9ada7;
 }
 
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> e1e566a6a159c02e5a1342489f1dcbdfd3618677
 /* Logo base style with a more vivid gradient color */
 .logo {
   font-size: 46.6px;
@@ -475,16 +468,6 @@ body {
   }
 }
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
->>>>>>> e1e566a6a159c02e5a1342489f1dcbdfd3618677
 /* Community Posts and Sidebar */
 .community-content {
   display: grid;
@@ -528,17 +511,6 @@ body {
   border-top: 1px dashed #c9ada7;
   padding-top: 8px;
   margin-top: 12px;
-<<<<<<< HEAD
-=======
-}
-
-/* Sidebar with Filters */
-.sidebar {
-  background-color: #f2e9e4;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
->>>>>>> e1e566a6a159c02e5a1342489f1dcbdfd3618677
 }
 
 /* Popular Posts Filters */
@@ -590,7 +562,6 @@ body {
   color: #5b4b8a;
   font-weight: 600;
   transition: color 0.2s ease-in-out;
-<<<<<<< HEAD
 }
 
 .popular-posts li a:hover {
@@ -820,15 +791,12 @@ body {
   color: #5b4b8a;
   text-decoration: none;
   transition: color 0.2s;
-=======
->>>>>>> e1e566a6a159c02e5a1342489f1dcbdfd3618677
 }
 
 .popular-posts li a:hover {
   color: #355070;
 }
 
-<<<<<<< HEAD
 /* 달력 그리드 CSS */
 /* Calendar Grid */
 .calendar-grid {
@@ -925,227 +893,7 @@ body {
   object-fit: contain; /* This will ensure the image is scaled properly */
   border-radius: 15px; /* Rounded corners for the image */
   margin-bottom: 20px; /* Space between image and details */
-=======
-/* Adjustments for Community Calendar */
-.community-calendar {
-  background-color: #f7ede2;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
 }
-
-.community-calendar h2, .popular-filter h2 {
-  color: #5b4b8a;
-  margin-bottom: 15px;
-}
-
-.events-list li {
-  margin-bottom: 10px;
-}
-
-.events-list li strong {
-  color: #355070;
-}
-
-.events-list li span {
-  font-size: 14px;
-  color: #626262;
-}
-
-/* 설문 조사 디자인 개선 */
-.community-poll {
-  border: 2px solid #FFB6C1;
-  border-radius: 12px;
-  padding: 20px;
-  margin-top: 30px;
-  background-color: #FFF0F5;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.community-poll h2, #pollResults h3 {
-  color: #5b4b8a;
-  cursor: pointer;
-}
-
-.community-poll p, .community-poll label {
-  color: #626262;
-}
-
-.community-poll form {
-  display: grid;
-  gap: 10px;
-}
-
-.community-poll button {
-  background-color: #FFB6C1;
-  color: white;
-  padding: 10px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.community-poll button:hover {
-  background-color: #FF69B4;
-}
-
-.bar {
-  background-color: #FFB6C1;
-  text-align: right;
-  padding: 10px;
-  color: white;
-  margin-bottom: 5px;
-  border-radius: 5px;
-  transition: width 0.6s ease;
-}
-
-/* 설문 조사 접기/펼치기 버튼 */
-.toggle-button {
-  background-color: transparent;
-  border: none;
-  color: #5b4b8a;
-  cursor: pointer;
-  padding: 5px;
-  font-size: 1em;
-}
-
-.hide {
-  display: none;
-}
-
-/* 세로 그래프 스타일 */
-.results-container {
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  padding: 20px;
-}
-
-.result-bar {
-  width: 20%;
-  transition: all 0.5s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.result-bar div {
-  width: 100%;
-  background-color: #FFB6C1;
-  transition: all 0.5s ease;
-  border-radius: 5px 5px 0;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-}
-
-.result-text {
-  margin-top: 10px;
-  color: #626262;
->>>>>>> e1e566a6a159c02e5a1342489f1dcbdfd3618677
-}
-
-/* 설문 조사 결과 텍스트 */
-.poll-completed-message {
-  margin-top: 20px;
-  font-size: 16px;
-  color: #5b4b8a;
-  font-weight: bold;
-}
-
-
-/* <div class="upcoming-events-calendar">
-<h3>주간 공연 예정</h3>
-<!-- 한 주간의 날짜와 예정된 공연 정보 표시 -->
-<div class="week">
-  <div class="day">
-    <div class="date">4월 1일</div>
-    <div class="events">
-      <div class="event">뮤지컬 '위키드'</div>
-      <div class="event">연극 '로미오와 줄리엣'</div>
-    </div>
-  </div>
-  <!-- 나머지 날짜에 대한 day div 추가 -->
-  <!-- 예: -->
-  <div class="day">
-    <div class="date">4월 2일</div>
-    <div class="events">
-      <div class="event">발레 '백조의 호수'</div>
-    </div>
-  </div>
-  <!-- 나머지 날짜 구조 반복 -->
-</div>
-</div> */
-
-/* 주간 캘린더 스타일 */
-.sidebar .weekly-events-calendar {
-  background: #FFFF;
-  border: 1px solid #FFB6C1;
-  border-radius: 10px;
-  padding: 15px;
-  margin-top: 20px;
-}
-
-.sidebar .weekly-events-calendar h3 {
-  color: #5b4b8a;
-  margin-bottom: 15px;
-}
-
-.sidebar .week-indicator {
-  text-align: center;
-  font-weight: bold;
-  color: #5b4b8a;
-  margin-bottom: 10px;
-}
-
-.sidebar .calendar-week {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
-}
-
-.sidebar .day-of-week {
-  font-weight: bold;
-  color: #5b4b8a;
-  text-align: center;
-  font-size: 0.9em;
-}
-
-.sidebar .date-with-events {
-  background-color: #eae7dc;
-  border-radius: 5px;
-  padding: 5px;
-  position: relative;
-}
-
-.sidebar .date {
-  background-color: #FFC0CB;
-  color: #5b4b8a;
-  text-align: center;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.sidebar .events-list {
-  margin-top: 5px;
-}
-
-.sidebar .event {
-  background-color: #f8f9fa;
-  color: #5b4b8a;
-  text-align: center;
-  padding: 5px;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  cursor: default;
-  font-size: 0.8em;
-}
-
-
-
-
 
 
 /* Close Button */
