@@ -13,7 +13,8 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font-family: 'Nexon Kart Gothic', sans-serif; /* 폰트를 Nexon Kart Gothic으로 변경 */
+  font-family: 'Nexon Kart Gothic', sans-serif;
+  /* 폰트를 Nexon Kart Gothic으로 변경 */
   color: #4a4e69;
   background-color: #f2e9e4;
   line-height: 1.28;
@@ -45,10 +46,69 @@ body {
   border-bottom: 4px solid #c9ada7;
 }
 
-.logo {
-  font-size: 25.6px;
+/* .logo {
+  font-size: 56.6px;
   font-weight: 700;
 }
+ */
+
+
+
+/* Logo base style with a more vivid gradient color */
+.logo {
+  font-size: 46.6px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #2c2f40, #6e5773); /* Darker gradient for better contrast */
+  -webkit-background-clip: text;
+  background-clip: text; /* Standard property */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Standard property */
+  transition: transform 0.3s, background 0.3s;
+  display: inline-block;
+  cursor: pointer;
+  position: relative; /* For pseudo-elements */
+  margin-right: 60px; /* Provide space for the icon */
+}
+
+/* Logo hover effect */
+.logo:hover {
+  transform: scale(1.07); /* Slight lift */
+}
+
+/* Floating logo animation */
+.logo {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.5em; /* Smaller on smaller screens */
+  }
+}
+
+/* Logo before icon - adjust size and position for natural blend */
+.logo::before {
+  content: '';
+  display: block;
+  width: 50px; /* Adjusted icon size */
+  height: 50px; /* Adjusted icon size */
+  background-image: url('your-icon-path.png'); /* Ensure the icon path is correct */
+  background-size: cover;
+  position: absolute;
+  left: 0; /* Align with the text start */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1; /* Ensure it doesn't overlap text */
+}
+
+
+
+
+
+
+
+
 
 .menu {
   display: flex;
@@ -88,7 +148,8 @@ body {
   outline: none;
   transition: all 0.3s ease;
   margin-right: 10px;
-  font-family: 'Nexon Kart Gothic', sans-serif; /* 폰트를 Nexon Kart Gothic으로 변경 */
+  font-family: 'Nexon Kart Gothic', sans-serif;
+  /* 폰트를 Nexon Kart Gothic으로 변경 */
 }
 
 .search::placeholder {
@@ -111,12 +172,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Nexon Kart Gothic', sans-serif; /* 검색 버튼에 폰트 적용 */
+  font-family: 'Nexon Kart Gothic', sans-serif;
+  /* 검색 버튼에 폰트 적용 */
 }
 
 .search-btn:hover {
   background: #6b5b95;
 }
+
+
+
+
 
 .main-title {
   text-align: center;
@@ -126,7 +192,36 @@ body {
   margin-bottom: 32px;
   font-size: 25.6px;
   font-weight: 700;
+  animation: colorChange 2s;
+  animation-fill-mode: forwards;
 }
+
+@keyframes colorChange {
+  0% { color: #9a8c98; }
+  100% { color: #f2e9e4; }
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 20px;
+    padding: 36px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .icon-bar {
   display: flex;
