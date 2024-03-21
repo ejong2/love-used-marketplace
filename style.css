@@ -13,12 +13,25 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font-family: 'Baloo 2', cursive;
+  font-family: 'Nexon Kart Gothic', sans-serif; /* 폰트를 Nexon Kart Gothic으로 변경 */
   color: #4a4e69;
   background-color: #f2e9e4;
   line-height: 1.28;
   min-height: 100vh;
-  /* Ensure the minimum height is full viewport height */
+}
+
+@font-face {
+  font-family: 'Nexon Kart Gothic';
+  src: url('./fonts/넥슨 카트 고딕 Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nexon Kart Gothic';
+  src: url('./fonts/넥슨 카트 고딕 Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
 }
 
 /* Header Styles */
@@ -75,6 +88,7 @@ body {
   outline: none;
   transition: all 0.3s ease;
   margin-right: 10px;
+  font-family: 'Nexon Kart Gothic', sans-serif; /* 폰트를 Nexon Kart Gothic으로 변경 */
 }
 
 .search::placeholder {
@@ -97,6 +111,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Nexon Kart Gothic', sans-serif; /* 검색 버튼에 폰트 적용 */
 }
 
 .search-btn:hover {
