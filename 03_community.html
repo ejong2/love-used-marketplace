@@ -74,49 +74,47 @@
       </div>
     </div>
 
-  <div class="sidebars-container">
-    <div class="sidebar" id="popular-posts-sidebar">
-      <div class="popular-filter">
-        <h2>인기 글</h2>
-        <div class="filters">
-          <button class="filter-btn active">하루</button>
-          <button class="filter-btn">일주일</button>
-          <button class="filter-btn">한달</button>
+    <div class="sidebars-container">
+      <div class="sidebar" id="popular-posts-sidebar">
+        <div class="popular-filter">
+          <h2>인기 글</h2>
+          <div class="filters">
+            <button class="filter-btn active">하루</button>
+            <button class="filter-btn">일주일</button>
+            <button class="filter-btn">한달</button>
+          </div>
+        </div>
+        <ul class="popular-posts">
+          <li><span class="rank">1</span><a href="#">싱어 뮤지컬 '레미제라블'을 감상한 후기입니다.</a></li>
+          <li><span class="rank">2</span><a href="#">연극 '해리 포터와 저주받은 아이' 공연 후기를 공유합니다.</a></li>
+          <li><span class="rank">3</span><a href="#">뮤지컬 '위키드'를 감상한 감흥이 가득한 리뷰입니다.</a></li>
+          <li><span class="rank">4</span><a href="#">무대음향 기기 파벨 PA-100의 실제 사용 후기입니다.</a></li>
+          <li><span class="rank">5</span><a href="#">오페라 '라 트라비아타'를 즐긴 후기를 공유합니다.</a></li>
+          <li><span class="rank">6</span><a href="#">연극 '킹리어'의 라이브 CD를 듣고 느낀 점을 소개합니다.</a></li>
+          <li><span class="rank">7</span><a href="#">뮤지컬 '팬텀 오브 더 오페라'를 감상한 후기를 공유합니다.</a></li>
+          <li><span class="rank">8</span><a href="#">연극 '로미오와 줄리엣'을 관람한 소감을 공유합니다.</a></li>
+          <li><span class="rank">9</span><a href="#">뮤지컬 '레미제라블'의 감동을 되새기는 후기를 공유합니다.</a></li>
+          <li><span class="rank">10</span><a href="#">연극 '하데스타운'의 다양한 요소에 대한 소감을 공유합니다.</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar" id="weekly-events-sidebar">
+        <div class="weekly-events-calendar">
+          <h3>월간 공연 일정</h3>
+          <div class="month-indicator">4월</div>
+          <div class="calendar-grid"></div>
         </div>
       </div>
-      <ul class="popular-posts">
-        <li><span class="rank">1</span><a href="#">싱어 뮤지컬 '레미제라블'을 감상한 후기입니다.</a></li>
-        <li><span class="rank">2</span><a href="#">연극 '해리 포터와 저주받은 아이' 공연 후기를 공유합니다.</a></li>
-        <li><span class="rank">3</span><a href="#">뮤지컬 '위키드'를 감상한 감흥이 가득한 리뷰입니다.</a></li>
-        <li><span class="rank">4</span><a href="#">무대음향 기기 파벨 PA-100의 실제 사용 후기입니다.</a></li>
-        <li><span class="rank">5</span><a href="#">오페라 '라 트라비아타'를 즐긴 후기를 공유합니다.</a></li>
-        <li><span class="rank">6</span><a href="#">연극 '킹리어'의 라이브 CD를 듣고 느낀 점을 소개합니다.</a></li>
-        <li><span class="rank">7</span><a href="#">뮤지컬 '팬텀 오브 더 오페라'를 감상한 후기를 공유합니다.</a></li>
-        <li><span class="rank">8</span><a href="#">연극 '로미오와 줄리엣'을 관람한 소감을 공유합니다.</a></li>
-        <li><span class="rank">9</span><a href="#">뮤지컬 '레미제라블'의 감동을 되새기는 후기를 공유합니다.</a></li>
-        <li><span class="rank">10</span><a href="#">연극 '하데스타운'의 다양한 요소에 대한 소감을 공유합니다.</a></li>
-      </ul>
+      
+      <div id="events-popup-container" class="events-popup-container">
+        <div class="events-popup">
+          <span class="close-popup">&#10006;</span>
+          <div class="events-list"></div> <!-- 여러 이벤트를 위한 새로운 컨테이너 -->
+        </div>
+      </div>
+      
     </div>
 
-    <div class="sidebar" id="weekly-events-sidebar">
-      <div class="weekly-events-calendar">
-        <h3>주간 공연 일정</h3>
-        <div class="month-indicator">4월</div>
-        <div class="calendar-grid"></div>
-      </div>
-    </div>
-    
-    <div id="events-popup-container" class="events-popup-container">
-      <div class="events-popup">
-        <span class="close-popup">&#10006;</span>
-        <img src="" alt="Event Image" class="event-image" style="display: none;">
-        <h2 class="event-title" style="display: none;"></h2>
-        <div class="event-date" style="display: none;"></div>
-        <div class="event-description" style="display: none;"></div>
-        <a href="" class="event-link" style="display: none;">More Info</a>
-      </div>
-    </div>
-    
   </section>
 
   <section class="community-poll">
@@ -146,36 +144,36 @@
 </html>
 
 <script>
-  document.getElementById('pollForm').addEventListener('submit', function (e) {
+  document.getElementById('pollForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const selectedShow = formData.get('show');
-    // 예시 데이터, 실제로는 서버에서 가져올 수 있습니다.
     const resultsData = {
-      'wicked': 40,
-      'phantom': 30,
-      'swan-lake': 20,
-      'carmen': 10
+      '위키드': 40,
+      '팬텀': 30,
+      '스완레이크': 20,
+      '카르멘': 10
     };
     displayResults(resultsData, selectedShow);
   });
-
+  
   function displayResults(data, selected) {
     const resultsElement = document.getElementById('results');
-    resultsElement.innerHTML = '';
+    resultsElement.innerHTML = ''; // 결과 컨테이너 초기화
+    const resultList = document.createElement('ul'); // 결과를 담을 리스트 생성
+    resultList.classList.add('result-list'); // 리스트에 클래스 추가
     Object.keys(data).forEach(key => {
       const percentage = data[key];
-      const bar = document.createElement('div');
-      bar.classList.add('bar');
-      bar.style.width = percentage + '%';
-      bar.textContent = key === selected ? `★ ${key} - ${percentage}%` : `${key} - ${percentage}%`;
-      resultsElement.appendChild(bar);
+      const resultItem = document.createElement('li'); // 결과 항목을 담을 li 요소 생성
+      resultItem.classList.add('result-item'); // li 요소에 클래스 추가
+      resultItem.textContent = key === selected ? `★ ${key} - ${percentage}%` : `${key} - ${percentage}%`; // 선택된 항목 강조
+      resultList.appendChild(resultItem); // 리스트에 결과 항목 추가
     });
-    document.getElementById('pollResults').style.display = 'block';
+    resultsElement.appendChild(resultList); // 결과 컨테이너에 리스트 추가
+    document.getElementById('pollResults').style.display = 'block'; // 결과 섹션 표시
   }
-
-  // 설문 조사 접기/펼치기 기능
-  document.querySelector('.community-poll h2').addEventListener('click', function () {
+  
+  document.querySelector('.community-poll h2').addEventListener('click', function() {
     const form = document.getElementById('pollForm');
     const results = document.getElementById('pollResults');
     this.classList.toggle('collapsed');
@@ -183,30 +181,40 @@
       form.style.display = 'none';
       results.style.display = 'none';
     } else {
-      form.style.display = 'grid';
+      form.style.display = 'flex';
       results.style.display = 'block';
     }
   });
+  
 </script>
 
 <script>
+  // 이벤트 데이터를 배열 형태로 업데이트
   const eventsData = {
-    "2": {
+    "2": [{
       title: "뮤지컬 '위키드'",
       image: "https://www.seoulfn.com/news/photo/202103/415408_190048_241.gif",
       description: "This is a description for 뮤지컬 '위키드'.",
       link: "https://example.com/wicked"
     },
-    "4": {
+    {
       title: "오페라 '카르멘'",
       image: "https://www.seongdongnews.com/news/photo/202210/27819_21233_5850.jpg",
       description: "This is a description for 오페라 '카르멘'.",
       link: "https://example.com/carmen"
     },
-    // ...other events
+    ],
+    "4": [{
+      title: "오페라 '카르멘'",
+      image: "https://www.seongdongnews.com/news/photo/202210/27819_21233_5850.jpg",
+      description: "This is a description for 오페라 '카르멘'.",
+      link: "https://example.com/carmen"
+    }],
+    // ...다른 이벤트
   };
 
   document.addEventListener('DOMContentLoaded', () => {
+    // 달력 그리드 생성 로직 유지
     const calendarGrid = document.querySelector('.calendar-grid');
     for (let day = 1; day <= 30; day++) {
       const dayDiv = document.createElement('div');
@@ -218,7 +226,7 @@
     }
 
     document.querySelectorAll('.day.has-events').forEach(day => {
-      day.addEventListener('click', function() {
+      day.addEventListener('click', function () {
         showEventsForDay(this.getAttribute('data-day'));
       });
     });
@@ -228,39 +236,28 @@
     });
   });
 
+  // 이벤트 팝업 표시 로직 수정
   function showEventsForDay(day) {
-    const eventData = eventsData[day];
+    const eventsForDay = eventsData[day];
     const popupContainer = document.getElementById('events-popup-container');
-    const eventImage = popupContainer.querySelector('.event-image');
-    const eventTitle = popupContainer.querySelector('.event-title');
-    const eventDate = popupContainer.querySelector('.event-date');
-    const eventDescription = popupContainer.querySelector('.event-description');
-    const eventLink = popupContainer.querySelector('.event-link');
+    const eventsList = popupContainer.querySelector('.events-list');
+    eventsList.innerHTML = ''; // 이전 이벤트 내용 초기화
 
-    if (eventData) {
-      eventImage.src = eventData.image;
-      eventImage.alt = eventData.title;
-      eventImage.style.display = 'block';
-
-      eventTitle.textContent = eventData.title;
-      eventTitle.style.display = 'block';
-
-      eventDate.textContent = `${day}일의 이벤트`;
-      eventDate.style.display = 'block';
-
-      eventDescription.textContent = eventData.description;
-      eventDescription.style.display = 'block';
-
-      eventLink.href = eventData.link;
-      eventLink.textContent = 'More Info';
-      eventLink.style.display = 'block';
+    if (eventsForDay && eventsForDay.length > 0) {
+      eventsForDay.forEach(event => {
+        const eventItem = document.createElement('div');
+        eventItem.className = 'event-item';
+        eventItem.innerHTML = `
+          <img src="${event.image}" alt="${event.title}" class="event-image">
+          <h2 class="event-title">${event.title}</h2>
+          <div class="event-date">${day}일의 이벤트</div>
+          <div class="event-description">${event.description}</div>
+          <a href="${event.link}" class="event-link">More Info</a>
+        `;
+        eventsList.appendChild(eventItem);
+      });
     } else {
-      eventImage.style.display = 'none';
-      eventTitle.style.display = 'none';
-      eventDate.textContent = `${day}일은 이벤트가 없습니다.`;
-      eventDate.style.display = 'block';
-      eventDescription.style.display = 'none';
-      eventLink.style.display = 'none';
+      eventsList.innerHTML = `<div class="event-date">${day}일은 이벤트가 없습니다.</div>`;
     }
 
     popupContainer.style.display = 'flex';

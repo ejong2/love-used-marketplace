@@ -595,132 +595,121 @@ body {
   color: #626262;
 }
 
+
+
 /* 설문 조사 디자인 개선 */
 .community-poll {
-  border: 2px solid #ffb6c1;
+  border: 2px solid #c9ada7;
   border-radius: 12px;
   padding: 20px;
-  margin-top: 30px;
-  background-color: #fff0f5;
+  margin: 30px auto;
+  max-width: 600px;
+  background-color: #f2e9e4;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
 }
 
-.community-poll h2,
-#pollResults h3 {
-  color: #5b4b8a;
+.community-poll h2 {
+  color: #4a4e69;
+  margin-bottom: 15px;
+  text-align: center;
   cursor: pointer;
+  font-size: 1.8rem; /* 헤더 크기 증가 */
 }
 
-.community-poll p,
-.community-poll label {
+.community-poll p {
   color: #626262;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.2rem; /* 본문 텍스트 크기 증가 */
 }
 
 .community-poll form {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
+}
+
+.community-poll label {
+  display: flex;
+  align-items: center;
+  background-color: #eae7dc;
+  padding: 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.2rem; /* 라벨 텍스트 크기 증가 */
+}
+
+.community-poll input[type="radio"] {
+  margin-right: 10px;
+  cursor: pointer;
+  transform: scale(1.5); /* 라디오 버튼 크기 증가 */
 }
 
 .community-poll button {
-  background-color: #ffb6c1;
-  color: white;
-  padding: 10px;
-  border-radius: 20px;
+  background-color: #4a4e69;
+  color: #ffffff;
+  padding: 15px 20px;
   border: none;
+  border-radius: 20px;
+  margin-top: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 1.2rem; /* 버튼 텍스트 크기 증가 */
+  width: 50%;
+  align-self: center; /* 버튼을 폼 중앙에 위치 */
 }
 
 .community-poll button:hover {
-  background-color: #ff69b4;
+  background-color: #6b5b95;
+}
+
+#pollResults {
+  display: none;
+  margin-top: 20px;
+}
+
+#pollResults h3 {
+  color: #4a4e69;
+  margin-bottom: 10px;
+  font-size: 1.5rem; /* 결과 제목 크기 증가 */
 }
 
 .bar {
-  background-color: #ffb6c1;
-  text-align: right;
+  background-color: #6b5b95;
   padding: 10px;
-  color: white;
+  color: #f2e9e4;
   margin-bottom: 5px;
   border-radius: 5px;
   transition: width 0.6s ease;
+  text-align: left;
+  font-size: 1.2rem; /* 바 내 텍스트 크기 증가 */
 }
 
-/* 설문 조사 접기/펼치기 버튼 */
-.toggle-button {
-  background-color: transparent;
-  border: none;
-  color: #5b4b8a;
-  cursor: pointer;
-  padding: 5px;
-  font-size: 1em;
+/* 결과 리스트 스타일 */
+.result-list {
+  display: flex; /* 리스트 항목을 가로로 나열 */
+  justify-content: center; /* 항목을 가운데 정렬 */
+  list-style: none; /* 기본 리스트 스타일 제거 */
+  padding: 0; /* 기본 패딩 제거 */
+  margin: 0; /* 기본 마진 제거 */
 }
 
-.hide {
-  display: none;
+/* 각 결과 항목 스타일 */
+.result-item {
+  margin-right: 20px; /* 항목 간 간격 */
+  background-color: #eae7dc; /* 배경 색상 */
+  padding: 10px; /* 패딩 */
+  border-radius: 10px; /* 모서리 둥글게 */
 }
 
-/* 세로 그래프 스타일 */
-.results-container {
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  padding: 20px;
+.result-item:last-child {
+  margin-right: 0; /* 마지막 항목의 오른쪽 마진 제거 */
 }
 
-.result-bar {
-  width: 20%;
-  transition: all 0.5s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.result-bar div {
-  width: 100%;
-  background-color: #ffb6c1;
-  transition: all 0.5s ease;
-  border-radius: 5px 5px 0;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-}
 
-.result-text {
-  margin-top: 10px;
-  color: #626262;
-}
 
-/* 설문 조사 결과 텍스트 */
-.poll-completed-message {
-  margin-top: 20px;
-  font-size: 16px;
-  color: #5b4b8a;
-  font-weight: bold;
-}
-
-/* <div class="upcoming-events-calendar">
-<h3>주간 공연 예정</h3>
-<!-- 한 주간의 날짜와 예정된 공연 정보 표시 -->
-<div class="week">
-  <div class="day">
-    <div class="date">4월 1일</div>
-    <div class="events">
-      <div class="event">뮤지컬 '위키드'</div>
-      <div class="event">연극 '로미오와 줄리엣'</div>
-    </div>
-  </div>
-  <!-- 나머지 날짜에 대한 day div 추가 -->
-  <!-- 예: -->
-  <div class="day">
-    <div class="date">4월 2일</div>
-    <div class="events">
-      <div class="event">발레 '백조의 호수'</div>
-    </div>
-  </div>
-  <!-- 나머지 날짜 구조 반복 -->
-</div>
-</div> */
 
 /* 사이드바를 담고 있는 컨테이너 */
 .sidebars-container {
@@ -797,8 +786,10 @@ body {
   color: #355070;
 }
 
-/* 달력 그리드 CSS */
-/* Calendar Grid */
+
+
+
+/* Global Calendar Grid Styles */
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -807,16 +798,14 @@ body {
 }
 
 .weekly-events-calendar {
-  /* Add margin-bottom to the h3 tag */
-  margin-bottom: 20px; /* Adjust the value as needed to increase spacing */
+  margin-bottom: 20px;
 }
 
 .month-indicator {
-  /* If additional spacing is also required above the month indicator, add margin-top */
-  margin-top: 20px; /* Adjust the value as needed to increase spacing */
+  margin-top: 20px;
 }
 
-/* Day */
+/* Day Styling */
 .day {
   padding: 2px;
   background-color: #eae7dc;
@@ -833,16 +822,13 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Day with Events */
 .day.has-events {
   background-color: #c9ada7;
   color: #ffffff;
 }
 
-/* Responsive adjustments for the calendar */
 @media (max-width: 768px) {
   .calendar-grid {
-    grid-template-columns: repeat(7, 1fr);
     gap: 8px;
   }
 
@@ -852,7 +838,9 @@ body {
   }
 }
 
-/* Event Popup Container */
+
+
+/* Event Popup Container Styling */
 .events-popup-container {
   display: none;
   position: fixed;
@@ -860,148 +848,110 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(
-    50,
-    50,
-    50,
-    0.85
-  ); /* Semi-transparent black for backdrop */
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 1000;
   justify-content: center;
   align-items: center;
-  padding: 20px; /* Added padding to prevent the popup from touching the window edges */
+  padding: 20px;
 }
 
 /* Event Popup Styling */
 .events-popup {
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-  width: 80%;
-  max-width: 700px; /* Increased for more content */
-  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  width: 95%;
+  max-width: 800px;
+  padding: 30px;
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center-align the content */
-}
-
-/* Event Image */
-.event-image {
-  width: 100%; /* Full width of the container */
-  max-height: 300px; /* Maximum height it can take */
-  object-fit: contain; /* This will ensure the image is scaled properly */
-  border-radius: 15px; /* Rounded corners for the image */
-  margin-bottom: 20px; /* Space between image and details */
-}
-
-
-/* Close Button */
-.close-popup {
-  position: absolute;
-  top: 20px; /* Adjusted position */
-  right: 20px; /* Adjusted position */
-  background-color: #f2e9e4; /* Adjusted color for a softer look */
-  width: 40px; /* Larger button for easier click */
-  height: 40px;
-  line-height: 40px; /* Center the 'X' text */
-  font-size: 1.5rem; /* Larger 'X' for visibility */
-  color: #4a4e69;
-  border: none; /* Remove border if any */
-  display: flex;
   align-items: center;
-  justify-content: center;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
-/* Event Details */
-.events-details h4 {
-  font-size: 1.25rem; /* Larger font size for clarity */
-  color: #4a4e69;
-  margin-bottom: 24px;
-  padding-bottom: 10px;
+/* Scrollbar Styling */
+.events-list {
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.events-details ul {
-  list-style: none;
-  padding: 0;
+.events-list::-webkit-scrollbar {
+  display: none;
 }
 
-.events-details li {
+/* Event Item Styling */
+.event-item {
   background-color: #eae7dc;
-  padding: 15px 20px;
+  border-radius: 8px;
   margin-bottom: 15px;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 500; /* Slightly bolder for readability */
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-  cursor: pointer; /* Indicates the list items are clickable */
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
 }
 
-.events-details li:hover {
-  background-color: #c9ada7; /* Highlight the item on hover */
+.event-item:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive adjustments for the popup */
-@media (max-width: 768px) {
-  .events-popup {
-    width: 80%; /* Increase width on smaller screens for readability /
-  padding: 15px; / Adjust padding */
-  }
-
-  .close-popup {
-    top: -15px; /* Adjust close button positioning on smaller screens /
-  right: -15px;
-  width: 25px; / Adjust close button size /
-  height: 25px;
-  line-height: 25px;
-  font-size: 1rem; / Adjust font size for the close button */
-  }
-
-  .events-details h4 {
-    font-size: 1rem; /* Adjust event date title size for smaller screens */
-  }
-}
-
-/* Event Title */
-.event-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #4a4e69;
+/* Image, Title, Date, Description, and Link Styling */
+.event-image {
+  width: 20%;
+  height: auto;
+  border-radius: 8px;
   margin-bottom: 10px;
 }
 
-/* Event Date */
-.event-date {
-  font-size: 1.25rem;
-  margin-bottom: 20px;
+.event-title {
+  font-size: 1.5rem;
   color: #4a4e69;
+  margin-bottom: 5px;
 }
 
-/* Event Description */
+.event-date {
+  font-size: 1.2rem;
+  color: #9a8c98;
+  margin-bottom: 10px;
+}
+
 .event-description {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #626262;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eae7dc;
-  margin-bottom: 20px; /* Space before the 'More Info' link */
+  margin-bottom: 15px;
 }
 
-/* Event 'More Info' Link */
 .event-link {
-  font-size: 1rem;
-  padding: 10px 20px;
-  background-color: #c9ada7;
-  color: #ffffff;
+  background-color: #4a4e69;
+  color: #f2e9e4;
+  text-decoration: none;
+  padding: 8px 15px;
   border-radius: 5px;
-  text-decoration: none; /* Remove underline from the link */
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 .event-link:hover {
-  background-color: #a09293; /* Darken button on hover */
+  background-color: #6b5b95;
 }
 
+/* Close Button Styling */
+.close-popup {
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #4a4e69;
+}
 
+.close-popup:hover {
+  color: #6b5b95;
+}
 
 
 
