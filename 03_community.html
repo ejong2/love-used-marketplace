@@ -75,6 +75,11 @@
     </div>
 
     <div class="sidebars-container">
+
+        <div class="review-button-container">
+          <a href="review-page.html" class="review-button">공연 리뷰 작성하기</a>
+        </div>
+
       <div class="sidebar" id="popular-posts-sidebar">
         <div class="popular-filter">
           <h2>인기 글</h2>
@@ -88,13 +93,8 @@
           <li><span class="rank">1</span><a href="#">싱어 뮤지컬 '레미제라블'을 감상한 후기입니다.</a></li>
           <li><span class="rank">2</span><a href="#">연극 '해리 포터와 저주받은 아이' 공연 후기를 공유합니다.</a></li>
           <li><span class="rank">3</span><a href="#">뮤지컬 '위키드'를 감상한 감흥이 가득한 리뷰입니다.</a></li>
-          <li><span class="rank">4</span><a href="#">무대음향 기기 파벨 PA-100의 실제 사용 후기입니다.</a></li>
-          <li><span class="rank">5</span><a href="#">오페라 '라 트라비아타'를 즐긴 후기를 공유합니다.</a></li>
-          <li><span class="rank">6</span><a href="#">연극 '킹리어'의 라이브 CD를 듣고 느낀 점을 소개합니다.</a></li>
-          <li><span class="rank">7</span><a href="#">뮤지컬 '팬텀 오브 더 오페라'를 감상한 후기를 공유합니다.</a></li>
-          <li><span class="rank">8</span><a href="#">연극 '로미오와 줄리엣'을 관람한 소감을 공유합니다.</a></li>
-          <li><span class="rank">9</span><a href="#">뮤지컬 '레미제라블'의 감동을 되새기는 후기를 공유합니다.</a></li>
-          <li><span class="rank">10</span><a href="#">연극 '하데스타운'의 다양한 요소에 대한 소감을 공유합니다.</a></li>
+          <li><span class="rank">4</span><a href="#">오페라 '라 트라비아타'를 즐긴 후기를 공유합니다.</a></li>
+          <li><span class="rank">5</span><a href="#">연극 '로미오와 줄리엣'을 관람한 소감을 공유합니다.</a></li>
         </ul>
       </div>
 
@@ -189,59 +189,84 @@
 </script>
 
 <script>
-  // 이벤트 데이터를 배열 형태로 업데이트
+  // 이벤트 데이터
   const eventsData = {
-    "2": [{
+    "2024-03-02": [{
       title: "뮤지컬 '위키드'",
       image: "https://www.seoulfn.com/news/photo/202103/415408_190048_241.gif",
-      description: "This is a description for 뮤지컬 '위키드'.",
+      description: "뮤지컬 '위키드'에 대한 설명입니다.",
       link: "https://example.com/wicked"
     },
     {
-      title: "오페라 '카르멘'",
+      title: "뮤지컬 '카르멘'",
       image: "https://www.seongdongnews.com/news/photo/202210/27819_21233_5850.jpg",
-      description: "This is a description for 오페라 '카르멘'.",
-      link: "https://example.com/carmen"
-    },
-    ],
-    "4": [{
-      title: "오페라 '카르멘'",
-      image: "https://www.seongdongnews.com/news/photo/202210/27819_21233_5850.jpg",
-      description: "This is a description for 오페라 '카르멘'.",
-      link: "https://example.com/carmen"
+      description: "오페라 '카르멘'에 대한 설명입니다.",
+      link: "https://example.com/wicked"
     }],
-    // ...다른 이벤트
+    "2024-03-15": [{
+      title: "오페라 '카르멘'",
+      image: "https://www.seongdongnews.com/news/photo/202210/27819_21233_5850.jpg",
+      description: "오페라 '카르멘'에 대한 설명입니다.",
+      link: "https://example.com/carmen"
+    }]
+    // 다른 날짜의 이벤트를 추가할 수 있습니다.
   };
 
   document.addEventListener('DOMContentLoaded', () => {
-    // 달력 그리드 생성 로직 유지
+    const now = new Date();
+    const month = now.getMonth(); // 현재 월
+    const year = now.getFullYear(); // 현재 연도
+
+    // 요일 헤더 추가
+    const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
     const calendarGrid = document.querySelector('.calendar-grid');
-    for (let day = 1; day <= 30; day++) {
+    dayNames.forEach(dayName => {
+      const dayHeader = document.createElement('div');
+      dayHeader.className = 'day-header';
+      dayHeader.textContent = dayName;
+      calendarGrid.appendChild(dayHeader);
+    });
+
+    // 달력 생성
+    const firstDayOfMonth = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    // 1일 전까지 빈칸 채우기
+    for (let i = 0; i < firstDayOfMonth; i++) {
+      const emptyDay = document.createElement('div');
+      emptyDay.className = 'day empty';
+      calendarGrid.appendChild(emptyDay);
+    }
+
+    // 일자 채우기
+    for (let day = 1; day <= daysInMonth; day++) {
+      const date = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
       const dayDiv = document.createElement('div');
       dayDiv.className = 'day';
-      if (eventsData[day]) dayDiv.classList.add('has-events');
-      dayDiv.setAttribute('data-day', day);
       dayDiv.textContent = day;
+      if (eventsData[date]) {
+        dayDiv.classList.add('has-events');
+        dayDiv.addEventListener('click', () => showEventsForDay(date));
+      }
       calendarGrid.appendChild(dayDiv);
     }
 
-    document.querySelectorAll('.day.has-events').forEach(day => {
-      day.addEventListener('click', function () {
-        showEventsForDay(this.getAttribute('data-day'));
-      });
-    });
+    // 월 표시 업데이트
+    const monthIndicator = document.querySelector('.month-indicator');
+    monthIndicator.textContent = `${year}년 ${month + 1}월`;
 
+    // 이벤트 팝업 닫기 이벤트 리스너
     document.querySelector('.close-popup').addEventListener('click', () => {
       document.getElementById('events-popup-container').style.display = 'none';
     });
   });
 
-  // 이벤트 팝업 표시 로직 수정
-  function showEventsForDay(day) {
-    const eventsForDay = eventsData[day];
+  // 선택된 날짜의 이벤트 표시
+  function showEventsForDay(date) {
+    const eventsForDay = eventsData[date];
     const popupContainer = document.getElementById('events-popup-container');
     const eventsList = popupContainer.querySelector('.events-list');
-    eventsList.innerHTML = ''; // 이전 이벤트 내용 초기화
+    eventsList.innerHTML = '';
 
     if (eventsForDay && eventsForDay.length > 0) {
       eventsForDay.forEach(event => {
@@ -250,14 +275,13 @@
         eventItem.innerHTML = `
           <img src="${event.image}" alt="${event.title}" class="event-image">
           <h2 class="event-title">${event.title}</h2>
-          <div class="event-date">${day}일의 이벤트</div>
-          <div class="event-description">${event.description}</div>
-          <a href="${event.link}" class="event-link">More Info</a>
+          <p class="event-description">${event.description}</p>
+          <a href="${event.link}" class="event-link">자세히 보기</a>
         `;
         eventsList.appendChild(eventItem);
       });
     } else {
-      eventsList.innerHTML = `<div class="event-date">${day}일은 이벤트가 없습니다.</div>`;
+      eventsList.innerHTML = `<p class="no-events">이 날에는 이벤트가 없습니다.</p>`;
     }
 
     popupContainer.style.display = 'flex';

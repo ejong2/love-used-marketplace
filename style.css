@@ -477,6 +477,29 @@ body {
   align-items: flex-start;
 }
 
+/* Review Button Styling */
+.review-button-container {
+  text-align: center; /* 중앙 정렬 */
+  margin-top: 20px; /* 상단 여백 추가 */
+}
+
+.review-button {
+  display: inline-block; /* 인라인 블록 요소로 설정 */
+  background-color: #4a4e69; /* 버튼 색상 */
+  color: #f2e9e4; /* 텍스트 색상 */
+  text-decoration: none; /* 텍스트 밑줄 제거 */
+  padding: 15px 30px; /* 패딩 설정 */
+  border-radius: 25px; /* 둥근 모서리 */
+  font-size: 1.2rem; /* 폰트 크기 설정 */
+  transition: background-color 0.3s, transform 0.2s; /* 배경색 및 변형에 대한 전환 효과 설정 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+}
+
+.review-button:hover {
+  background-color: #6b5b95; /* 호버 시 버튼 색상 변경 */
+  transform: translateY(-2px); /* 호버 시 버튼을 약간 위로 이동 */
+}
+
 /* Individual Post Styling */
 .post {
   border: 2px solid #e2d4f0;
@@ -789,12 +812,17 @@ body {
 
 
 
-/* Global Calendar Grid Styles */
+/* Calendar Grid Styles */
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 5px;
-  margin: 10px;
+  margin: 10px 0;
+}
+
+.calendar-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
 }
 
 .weekly-events-calendar {
@@ -803,21 +831,40 @@ body {
 
 .month-indicator {
   margin-top: 20px;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 /* Day Styling */
-.day {
-  padding: 2px;
-  background-color: #eae7dc;
+.day, .day-header {
+  padding: 6px;
   text-align: center;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
 }
 
-.day:hover {
+.day-header {
+  background-color: #eae7dc; /* Header background */
+  cursor: default;
+}
+
+.day-header:nth-child(1) {
+  color: red; /* Sunday color */
+}
+
+.day-header:nth-child(7) {
+  color: blue; /* Saturday color */
+}
+
+.day.empty {
+  background-color: transparent;
+  cursor: default;
+}
+
+.day:hover:not(.empty) {
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -827,15 +874,33 @@ body {
   color: #ffffff;
 }
 
+.day:nth-child(1) {
+  color: red; /* Sunday color */
+}
+
+.day:nth-child(7) {
+  color: blue; /* Saturday color */
+}
+
+/* Adjust weekday colors */
+.day:not(:nth-child(1)):not(:nth-child(7)):not(.empty) {
+  color: #4a4e69; /* Weekday color */
+}
+
 @media (max-width: 768px) {
   .calendar-grid {
     gap: 8px;
   }
 
-  .day {
-    padding: 10px;
+  .day, .day-header {
+    padding: 8px;
     font-size: 0.85rem;
   }
+}
+
+/* Last day margin adjustment */
+.calendar-grid > :nth-last-child(-n+7) {
+  margin-bottom: 0;
 }
 
 
